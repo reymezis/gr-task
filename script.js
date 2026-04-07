@@ -19,7 +19,7 @@ function getAuth() {
 async function getSettings() {
     const { id, token } = getAuth();
     if (!id || !token) return alert('Введите idInstance и ApiTokenInstance');
-    
+
     try {
         const response = await fetch(`${baseUrl}/waInstance${id}/getSettings/${token}`);
         const data = await response.json();
@@ -42,7 +42,7 @@ async function getStateInstance() {
 
 async function sendMessage() {
     const { id, token } = getAuth();
-    const phone = document.getElementById('phoneMessage').value.trim();
+    const phoneNumber = document.getElementById('phoneNumberMessage').value.trim();
     const message = document.getElementById('textMessage').value;
 
     try {
@@ -50,7 +50,7 @@ async function sendMessage() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                chatId: `${phone}@c.us`,
+                chatId: `${phoneNumber}@c.us`,
                 message: message
             })
         });
@@ -63,7 +63,7 @@ async function sendMessage() {
 
 async function sendFileByUrl() {
     const { id, token } = getAuth();
-    const phone = document.getElementById('phoneFile').value.trim();
+    const phoneNumber = document.getElementById('phoneNumberFile').value.trim();
     const urlFile = document.getElementById('fileUrl').value.trim();
     const fileName = urlFile.split('/').pop() || 'file';
 
@@ -72,7 +72,7 @@ async function sendFileByUrl() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                chatId: `${phone}@c.us`,
+                chatId: `${phoneNumber}@c.us`,
                 urlFile: urlFile,
                 fileName: fileName
             })
