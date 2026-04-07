@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GR-Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="controls">
+        <div class="group">
+            <label>Параметры подключения:</label>
+            <input type="text" id="idInstance" placeholder="idInstance">
+            <input type="text" id="apiTokenInstance" placeholder="ApiTokenInstance">
+        </div>
+
+        <div class="group">
+            <button id="btnGetSettings">getSettings</button>
+            <button id="btnGetStateInstance">getStateInstance</button>
+        </div>
+
+        <div class="group">
+            <input type="text" id="phoneMessage" placeholder="77771234567">
+            <textarea id="textMessage" placeholder="text message" rows="4"></textarea>
+            <button id="btnSendMessage">sendMessage</button>
+        </div>
+
+        <div class="group">
+            <input type="text" id="phoneFile" placeholder="text message">
+            <input type="text" id="fileUrl" placeholder="https://my.site.com/img/horse.png">
+            <button id="btnSendFileByUrl">sendFileByUrl</button>
+        </div>
+    </div>
+    <div class="response-section">
+        <label for="responseOutput">Ответ:</label>
+        <textarea id="responseOutput" class="response-area" readonly></textarea>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
